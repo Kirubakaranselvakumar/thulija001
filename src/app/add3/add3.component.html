@@ -1,0 +1,29 @@
+<h2>New Schema</h2>
+<div class="new">
+<button class="btn btn-success"><a routerLink ="/schema">Back</a></button>
+</div>
+
+
+<form [formGroup] = "addForm3" novalidate class= "form">
+    
+
+    
+    <div>
+        <label for="Schemaa_name">Schema Name</label>
+        <input type="text" formControlName = "Schemaa_name" placeholder="Schemaa_name" name="Schemaa_name">
+        <div *ngIf="addForm3.get('Schemaa_name')?.hasError('required') && addForm3.get('Schemaa_name')?.touched">
+            Please Enter Schema_name
+        </div>
+    
+    </div><br><br>
+
+    <div>
+        <label for="Description">Description</label>
+        <input type="text" formControlName = "Description" placeholder="Description" name="Description">
+        <div *ngIf="addForm3.get('Description')?.hasError('required') && addForm3.get('Description')?.touched">
+            Please Enter description
+        </div>
+    </div><br><br>
+
+    <button class="btn btn-success" (click) = "onSubmit()" [disabled] = "!addForm3.valid">Save</button><br><br>
+

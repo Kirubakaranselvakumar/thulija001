@@ -1,0 +1,28 @@
+<h2>New Module</h2>
+<div class="new">
+<button class="btn btn-success"><a routerLink ="/empower">Back</a></button>
+</div>
+
+
+<form [formGroup] = "addForm2" novalidate class= "form">
+    
+
+    
+    <div>
+        <label for="Module_name">Module Name</label>
+        <input type="text" formControlName = "Module_name" placeholder="Module_name" name="Module_name">
+        <div *ngIf="addForm2.get('Module_name')?.hasError('required') && addForm2.get('Module_name')?.touched">
+            Please Enter Project Name
+        </div>
+    
+    </div><br><br>
+
+    <div>
+        <label for="Description">Description</label>
+        <input type="text" formControlName = "Description" placeholder="Description" name="Description">
+        <div *ngIf="addForm2.get('Description')?.hasError('required') && addForm2.get('Description')?.touched">
+            Please Enter description
+        </div>
+    </div><br><br>
+
+    <button class="btn btn-success" (click) = "onSubmit()" [disabled] = "!addForm2.valid">Save</button><br><br>

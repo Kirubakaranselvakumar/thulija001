@@ -1,0 +1,23 @@
+<h2>Edit Customers</h2>
+<form [formGroup] = "addForm2" novalidate class= "form">
+    <div>
+        <label for="Module_name">Module_name:</label>
+        <input type="text" formControlName = "Module_name" placeholder="Module_name" name="Module_name">
+        <div *ngIf="addForm2.get('Module_name')?.hasError('required') && addForm2.get('Module_name')?.touched">
+            Please Enter Module_name
+        </div>
+    </div><br><br>
+
+    
+    <div>
+        <label for="Description">Description:</label>
+        <input type="text" formControlName = "Description" placeholder="Description" name="Description">
+        <div *ngIf="addForm2.get('Description')?.hasError('required') && addForm2.get('Description')?.touched">
+            Please Enter Description
+        </div>
+    
+    </div><br><br>
+
+    <button (click) = "updateempower()" [disabled] = "!addForm2.dirty">Save</button><br><br>
+
+

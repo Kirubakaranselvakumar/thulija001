@@ -1,0 +1,28 @@
+<h2>New Project</h2>
+<div class="new">
+<button class="btn btn-success"><a routerLink ="/view">Home</a></button>
+</div>
+
+
+<form [formGroup] = "addForm" novalidate class= "form">
+    
+
+    
+    <div>
+        <label for="Project_name">Project Name</label>
+        <input type="text" formControlName = "Project_name" placeholder="Project_name" name="Project_name">
+        <div *ngIf="addForm.get('Project_name')?.hasError('required') && addForm.get('Project_name')?.touched">
+            Please Enter Project Name
+        </div>
+    
+    </div><br><br>
+
+    <div>
+        <label for="Description">Description</label>
+        <input type="text" formControlName = "Description" placeholder="Description" name="Description">
+        <div *ngIf="addForm.get('Description')?.hasError('required') && addForm.get('Description')?.touched">
+            Please Enter description
+        </div>
+    </div><br><br>
+
+    <button class="btn btn-success" (click) = "onSubmit()" [disabled] = "!addForm.valid">Save</button><br><br>

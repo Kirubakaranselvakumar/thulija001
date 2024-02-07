@@ -1,0 +1,39 @@
+<div class="new">
+    <div class="topic">
+        <h3>Projects</h3>
+    </div>
+    
+    <button class="btn btn-success"><a routerLink ="/add">New Project</a></button>
+    <br><br>
+    <!-- <button (click) = "customer_details()">Customer_details</button> -->
+  </div>
+
+
+<table class="table table-hover table-bordered border-black text-center mt-4">
+    <thead>
+      <tr class="table-warning">
+        <th scope="col">No</th><br>
+        <th scope="col">Project Name</th><br>
+        <th scope="col">Description</th><br>
+        <th scope="col">Actions</th><br>
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor = "let cus of customers">
+        <th scope="row">{{cus.No}}</th><br><br>
+
+        <td><a routerLink="/empower">{{cus.Project_name}}</a></td><br><br>
+        <td>{{cus.Description}}</td><br><br>
+       
+        <td><button class="btn btn-primary" (click) = "edit(cus)">Edit</button></td><br><br>
+        <td><button class="btn btn-danger" (click) = "delete(cus)">Delete</button></td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+  
+  <br>
+ 

@@ -1,0 +1,23 @@
+<h2>Edit Customers</h2>
+<form [formGroup] = "addForm3" novalidate class= "form">
+    <div>
+        <label for="Schemaa_name">Schemaa_name:</label>
+        <input type="text" formControlName = "Schemaa_name" placeholder="Schemaa_name" name="Schemaa_name">
+        <div *ngIf="addForm3.get('Schemaa_name')?.hasError('required') && addForm3.get('Schemaa_name')?.touched">
+            Please Enter Schemaa_name
+        </div>
+    </div><br><br>
+
+    
+    <div>
+        <label for="Description">Description:</label>
+        <input type="text" formControlName = "Description" placeholder="Description" name="Description">
+        <div *ngIf="addForm3.get('Description')?.hasError('required') && addForm3.get('Description')?.touched">
+            Please Enter Description
+        </div>
+    
+    </div><br><br>
+
+    <button (click) = "updateschema()" [disabled] = "!addForm3.dirty">Save</button><br><br>
+
+
